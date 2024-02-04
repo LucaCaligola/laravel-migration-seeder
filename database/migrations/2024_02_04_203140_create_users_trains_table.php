@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('users_trains', function (Blueprint $table) {
             $table->id();
             $table->string('company', 50);
             $table->integer('train_code');
@@ -20,8 +20,8 @@ return new class extends Migration
             $table->datetime('departure_time');
             $table->datetime('arrival_time');
             $table->integer('number_of_wagon');
-            $table->boolean('on_schedule');
-            $table->boolean('cancelled');
+            $table->string('on_schedule',50);
+            $table->string('cancelled',50);
             $table->timestamps();
         });
     }
